@@ -33,6 +33,7 @@ void Height::slotMoveing(osg::Vec3d pos)
 void Height::slotRightHandle()
 {
 	endHandle();
+	m_pFeatureNode = nullptr;
 }
 
 void Height::init()

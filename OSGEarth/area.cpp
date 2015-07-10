@@ -63,6 +63,7 @@ void Area::slotRightHandle()
 {
 	endHandle();
 	drawPolygon();
+	m_pFeatureNode = nullptr;
 }
 
 void Area::drawPolygon(osg::Vec3d pos/* = osg::Vec3d()*/)

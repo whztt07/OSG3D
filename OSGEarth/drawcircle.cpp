@@ -55,10 +55,15 @@ void DrawCircle::slotPicked(osg::Vec3d pos)
 
 void DrawCircle::slotMoveing(osg::Vec3d pos)
 {
-	if (m_pCircleNode != NULL)
+	if (m_pCircleNode != NULL && m_centerPoint != osg::Vec3d())
 	{
 		m_pCircleNode->setRadius(
 			osgEarth::GeoMath::distance(m_centerPoint, pos, m_pMap3D->getSRS()));
 	}
 }
 
+void DrawCircle::slotRightHandle()
+{
+	m_centerPoint = osg::Vec3d();
+	m_pCircleNode = NULL;
+}

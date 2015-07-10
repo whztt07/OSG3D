@@ -2,3 +2,6 @@ Win32
 GeneratedFiles
 *.sdf
 *.user
+*.filters
+*.suo
+*.opensdf

@@ -15,6 +15,7 @@
 #include "lineanalysis.h"
 #include "areaanalysis.h"
 #include "avatar.h"
+#include "radarmap.h"
 
 class OSGEarth : public QMainWindow
 {
@@ -37,6 +38,7 @@ private slots:
 	void slotAvatar();
 	void slotOverlay();
 	void slotGride();
+	void slotRadarMap();
 
 private:
 	Ui::OSGEarthClass ui;
@@ -53,6 +55,7 @@ private:
 	Avatar* m_pAvatarNode;
 	osg::ref_ptr<osgEarth::Annotation::ImageOverlay> m_pImage;
 	osg::ref_ptr<osgEarth::Util::GeodeticGraticule> m_pGraticule;
+	RadarMap* m_pRadarMap;
 };
 
 #endif // OSGEARTH_H

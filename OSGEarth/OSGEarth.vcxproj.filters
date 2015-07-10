@@ -42,12 +42,15 @@
     <Filter Include="Measurement">
       <UniqueIdentifier>{f2bd5bc0-b4c1-47a9-b90b-d1ce2516c4ee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tools">
+      <UniqueIdentifier>{106b47cb-4254-4168-89c6-f92ad47d4704}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Handle">
+      <UniqueIdentifier>{cecde5a3-ea09-447c-b5c7-83a24b08d884}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="avatar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_avatar.cpp">
@@ -57,9 +60,6 @@
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="calcmath.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="controlavatar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_controlavatar.cpp">
@@ -113,9 +113,6 @@
     <ClCompile Include="drawline.cpp">
       <Filter>Geometry</Filter>
     </ClCompile>
-    <ClCompile Include="pickhandle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_pickhandle.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
@@ -125,14 +122,41 @@
     <ClCompile Include="drawpolygon.cpp">
       <Filter>Geometry</Filter>
     </ClCompile>
-    <ClCompile Include="handleadapter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_handleadapter.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_handleadapter.cpp">
       <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="avatar.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_radarmap.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_radarmap.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="radarmap.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="handleadapter.cpp">
+      <Filter>Handle</Filter>
+    </ClCompile>
+    <ClCompile Include="pickhandle.cpp">
+      <Filter>Handle</Filter>
+    </ClCompile>
+    <ClCompile Include="controlavatar.cpp">
+      <Filter>Handle</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_framehandle.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_framehandle.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="framehandle.cpp">
+      <Filter>Handle</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -141,12 +165,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="avatar.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="controlavatar.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="graphicsview.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -180,14 +198,26 @@
     <CustomBuild Include="distance.h">
       <Filter>Measurement</Filter>
     </CustomBuild>
-    <CustomBuild Include="pickhandle.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="drawpolygon.h">
       <Filter>Geometry</Filter>
     </CustomBuild>
+    <CustomBuild Include="avatar.h">
+      <Filter>Tools</Filter>
+    </CustomBuild>
+    <CustomBuild Include="radarmap.h">
+      <Filter>Tools</Filter>
+    </CustomBuild>
     <CustomBuild Include="handleadapter.h">
-      <Filter>Header Files</Filter>
+      <Filter>Handle</Filter>
+    </CustomBuild>
+    <CustomBuild Include="pickhandle.h">
+      <Filter>Handle</Filter>
+    </CustomBuild>
+    <CustomBuild Include="controlavatar.h">
+      <Filter>Handle</Filter>
+    </CustomBuild>
+    <CustomBuild Include="framehandle.h">
+      <Filter>Handle</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

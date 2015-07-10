@@ -17,6 +17,7 @@ OSGEarth::OSGEarth(QWidget *parent)
 	m_pAvatarNode = NULL;
 	m_pImage = NULL;
 	m_pGraticule = NULL;
+	m_pRadarMap = nullptr;
 
 	m_pViewer = new GraphicsView(this);
 	this->setCentralWidget(m_pViewer);
@@ -33,6 +34,7 @@ OSGEarth::OSGEarth(QWidget *parent)
 	connect(ui.actionAvatar, SIGNAL(triggered()), this, SLOT(slotAvatar()));
 	connect(ui.actionOverlay, SIGNAL(triggered()), this, SLOT(slotOverlay()));
 	connect(ui.actionGride, SIGNAL(triggered()), this, SLOT(slotGride()));
+	connect(ui.actionMap, SIGNAL(triggered()), this, SLOT(slotRadarMap()));
 }
 
 OSGEarth::~OSGEarth()
@@ -261,6 +263,25 @@ void OSGEarth::slotGride()
 		{
 			m_pViewer->getRoot()->removeChild(m_pGraticule);
 			m_pGraticule = nullptr;
+		}
+	}
+}
+
+void OSGEarth::slotRadarMap()
+{
+	if (ui.actionMap->isChecked())
+	{
+		if (m_pRadarMap == nullptr)
+		{
+			m_pRadarMap = new RadarMap(m_pViewer);
+		}
+		m_pRadarMap->enableMap();
+	}
+	else
+	{
+		if (m_pRadarMap)
+		{
+			m_pRadarMap->disableMap();
 		}
 	}
 }

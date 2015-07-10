@@ -39,6 +39,7 @@ void Water::slotMoveingXYZ(osg::Vec3d pos)
 void Water::slotRightHandle()
 {
 	endHandle();
+	m_pWater = nullptr;
 }
 
 void Water::drawWater(osg::Vec3d pos /*= osg::Vec3d()*/)

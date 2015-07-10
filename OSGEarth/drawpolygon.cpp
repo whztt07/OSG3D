@@ -117,4 +117,5 @@ void DrawPolygon::slotRightHandle()
 	{
 		m_pStippleFeatureNode->getFeature()->getGeometry()->clear();
 	}
+	m_pFeatureNode = nullptr;
 }

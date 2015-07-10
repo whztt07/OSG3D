@@ -12,6 +12,7 @@ public:
 protected:
 	virtual void slotPicked(osg::Vec3d pos);
 	virtual void slotMoveing(osg::Vec3d pos);
+	virtual void slotRightHandle();
 
 private:
 	osg::Vec3d m_centerPoint;
