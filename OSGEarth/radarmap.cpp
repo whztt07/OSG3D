@@ -46,6 +46,8 @@ void RadarMap::slotFrameViewport(const osg::Vec3d& pos)
 	{
 		m_pGeodeCross = new osg::Geode;
 		osg::ref_ptr<osg::Geometry> pGeometry = new osg::Geometry;
+		// 使用VBO，每帧实时的修改数据
+		pGeometry->setUseVertexBufferObjects(true);
 		m_pVertexCross = new osg::Vec3dArray;
 		pGeometry->setVertexArray(m_pVertexCross);
 		osg::ref_ptr<osg::Vec3Array> normal = new osg::Vec3Array;
@@ -62,10 +64,13 @@ void RadarMap::slotFrameViewport(const osg::Vec3d& pos)
 		m_pGeodeCross->addDrawable(pGeometry);
 		m_pHUDCamera->addChild(m_pGeodeCross);
 	}
-	m_pVertexCross->clear();
 	osg::Vec3d mapPos = getLonLat(pos);
+	// 经纬度是-180~180，-90~90，保证算出的是0~360和0~180
 	double x = (mapPos.x() + 180.0) * m_iWidth / 360.0;
 	double y = (mapPos.y() + 90.0) * m_iHeight / 180.0;
+
+	// 更新缓冲区数据
+	m_pVertexCross->clear();
 	m_pVertexCross->push_back(osg::Vec3d(x, y - 5, 0));
 	m_pVertexCross->push_back(osg::Vec3d(x, y + 5, 0));
 	m_pVertexCross->push_back(osg::Vec3d(x - 5, y, 0));

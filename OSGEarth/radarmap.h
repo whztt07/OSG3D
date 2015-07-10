@@ -41,7 +41,7 @@ private:
 	osg::ref_ptr<osg::Group> m_pGroup;
 	FrameHandle* m_pFrameHandle;
 
-	// 点
+	// 十字架，显示当前视点位置
 	osg::ref_ptr<osg::Geode> m_pGeodeCross;
 	osg::ref_ptr<osg::Vec3dArray> m_pVertexCross;
 };
