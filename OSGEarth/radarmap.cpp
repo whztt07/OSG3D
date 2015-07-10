@@ -4,6 +4,10 @@ RadarMap::RadarMap(GraphicsView* view, QObject* parent/* = nullptr*/)
 	: m_pOSGViewer(view), QObject(parent)
 {
 	m_pHUDCamera = nullptr;
+	m_pGroup = new osg::Group;
+	m_pOSGViewer->getRoot()->addChild(m_pGroup);
+	m_pFrameHandle = new FrameHandle;
+	m_pGeodeCross = nullptr;
 	setGeomtry();
 }
 
@@ -18,21 +22,55 @@ void RadarMap::enableMap()
 	{
 		createMap();
 	}
-	m_pOSGViewer->getMapNode()->addChild(m_pHUDCamera);
+	m_pGroup->addChild(m_pHUDCamera);
+	m_pOSGViewer->getOSGViewer()->addEventHandler(m_pFrameHandle);
+	connect(m_pFrameHandle, SIGNAL(signalFrameViewport(const osg::Vec3d&)),
+		this, SLOT(slotFrameViewport(const osg::Vec3d&)));
 }
 
 void RadarMap::disableMap()
 {
 	if (m_pHUDCamera)
 	{
-		m_pOSGViewer->getMapNode()->removeChild(m_pHUDCamera);
+		m_pGroup->removeChild(m_pHUDCamera);
 		m_pHUDCamera = nullptr;
+		disconnect(m_pFrameHandle, SIGNAL(signalFrameViewport(const osg::Vec3d&)),
+			this, SLOT(slotFrameViewport(const osg::Vec3d&)));
+		m_pOSGViewer->getOSGViewer()->removeEventHandler(m_pFrameHandle);
 	}
 }
 
 void RadarMap::slotFrameViewport(const osg::Vec3d& pos)
 {
+	if (m_pGeodeCross == nullptr)
+	{
+		m_pGeodeCross = new osg::Geode;
+		osg::ref_ptr<osg::Geometry> pGeometry = new osg::Geometry;
+		m_pVertexCross = new osg::Vec3dArray;
+		pGeometry->setVertexArray(m_pVertexCross);
+		osg::ref_ptr<osg::Vec3Array> normal = new osg::Vec3Array;
+		normal->push_back(osg::Vec3(0, 0, 1));
+		pGeometry->setNormalArray(normal, osg::Array::BIND_OVERALL);
+		osg::ref_ptr<osg::Vec4Array> color = new osg::Vec4Array;
+		color->push_back(osg::Vec4(0.8, 0.8, 0.8, 1));
+		pGeometry->setColorArray(color, osg::Array::BIND_OVERALL);
+		pGeometry->addPrimitiveSet(new osg::DrawArrays(osg::PrimitiveSet::LINES, 0, 4));
 
+		m_pGeodeCross->getOrCreateStateSet()->setMode(GL_LIGHTING, osg::StateAttribute::OFF);
+		m_pGeodeCross->getOrCreateStateSet()->setAttribute(
+			new osg::LineWidth(0.5), osg::StateAttribute::ON);
+		m_pGeodeCross->addDrawable(pGeometry);
+		m_pHUDCamera->addChild(m_pGeodeCross);
+	}
+	m_pVertexCross->clear();
+	osg::Vec3d mapPos = getLonLat(pos);
+	double x = (mapPos.x() + 180.0) * m_iWidth / 360.0;
+	double y = (mapPos.y() + 90.0) * m_iHeight / 180.0;
+	m_pVertexCross->push_back(osg::Vec3d(x, y - 5, 0));
+	m_pVertexCross->push_back(osg::Vec3d(x, y + 5, 0));
+	m_pVertexCross->push_back(osg::Vec3d(x - 5, y, 0));
+	m_pVertexCross->push_back(osg::Vec3d(x + 5, y, 0));
+	m_pVertexCross->dirty();
 }
 
 void RadarMap::createMap()
@@ -123,4 +161,17 @@ void RadarMap::createMap()
 	pGeode->getOrCreateStateSet()->setMode(GL_LIGHTING, osg::StateAttribute::OFF);
 
 	m_pHUDCamera->addChild(pGeode);
+}
+
+osg::Vec3d RadarMap::getLonLat(const osg::Vec3d& worldPos)
+{
+	osg::Vec3d vecPos = osg::Vec3d();
+	if (m_pOSGViewer)
+	{
+		m_pOSGViewer->getSRS()->getEllipsoid()->convertXYZToLatLongHeight(
+			worldPos.x(), worldPos.y(), worldPos.z(), vecPos.y(), vecPos.x(), vecPos.z());
+		vecPos.x() = osg::RadiansToDegrees(vecPos.x());
+		vecPos.y() = osg::RadiansToDegrees(vecPos.y());
+	}
+	return vecPos;
 }

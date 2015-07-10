@@ -24,6 +24,7 @@
 #include <osg/Array>
 #include <osg/CoordinateSystemNode>
 #include <osg/AnimationPath>
+#include <osg/Point>
 
 #include <osgDB/Registry>
 #include <osgDB/ReadFile>

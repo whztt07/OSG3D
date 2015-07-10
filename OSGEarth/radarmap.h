@@ -25,6 +25,8 @@ private slots:
 
 private:
 	void createMap();
+	// 根据世界坐标去经纬度坐标
+	osg::Vec3d getLonLat(const osg::Vec3d& worldPos);
 
 private:
 	// 显示的区域
@@ -36,6 +38,12 @@ private:
 	// HUD相机
 	osg::ref_ptr<osg::Camera> m_pHUDCamera;
 	GraphicsView* m_pOSGViewer;
+	osg::ref_ptr<osg::Group> m_pGroup;
+	FrameHandle* m_pFrameHandle;
+
+	// 点
+	osg::ref_ptr<osg::Geode> m_pGeodeCross;
+	osg::ref_ptr<osg::Vec3dArray> m_pVertexCross;
 };
 
 #endif // RADARMAP_H
