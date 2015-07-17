@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<map version="2">
+  <image driver="xyz" enabled="true" name="gaode_map-0" profile="global-mercator" url="http://webrd0[1234].is.autonavi.com/appmaptile?lang=zh_cn&amp;size=1&amp;scale=1&amp;style=7&amp;x={x}&amp;y={y}&amp;z={z}" visible="true">
+    <cache_policy min_time="0" usage="no_cache" />
+  </image>
+</map>

@@ -47,7 +47,7 @@ void Motion::slotRadioChanged()
 	if (button)
 	{
 		QString str = button->text();
-
+		
 		if (!str.compare("OutQuadMotion"))
 			m_pMotion->setMotion<osgAnimation::OutQuadMotion>()
 			;

@@ -1,0 +1,48 @@
+<map  name="bluemarble" type="geocentric" version="2">
+    <image driver="tms" name="world-tiff" cache_enabled="false">
+        <url>E:/GreatMap/project/GM3ds/dev/trunk/bin/tms/world/tms.xml</url>
+        <caching_policy usage="no_cache"/>
+    </image>
+<!--六盘水影像-->
+	<image driver="tms" name="lps_t1" cache_enabled="true">
+        <url>E:/GreatMap/project/GM3ds/dev/trunk/bin/tms/lps_t1/tms.xml</url>
+        <caching_policy usage="cache_only"/>
+    </image>
+	<image driver="tms" name="lps_t2" cache_enabled="true">
+        <url>E:/GreatMap/project/GM3ds/dev/trunk/bin/tms/lps_t2/tms.xml</url>
+        <caching_policy usage="cache_only"/>
+    </image>
+	<image driver="tms" name="lps_t3" cache_enabled="true">
+        <url>E:/GreatMap/project/GM3ds/dev/trunk/bin/tms/lps_t3/tms.xml</url>
+        <caching_policy usage="cache_only"/>
+    </image>
+	<image driver="tms" name="lps_t4" cache_enabled="true">
+        <url>E:/GreatMap/project/GM3ds/dev/trunk/bin/tms/lps_t4/tms.xml</url>
+        <caching_policy usage="cache_only"/>
+    </image>
+<!--六盘水高程-->	
+	<heightfield driver="tms" name="lps_d1" cache_enabled="true">
+        <url>E:/GreatMap/project/GM3ds/dev/trunk/bin/tms/lps_d1/tms.xml</url>
+        <caching_policy usage="cache_only"/>
+    </heightfield>
+<!--国界线-->
+	<model name="china_shp" driver="feature_geom">
+            
+        <features name="china" driver="ogr">
+            <url>E:/GreatMap/project/GM3ds/dev/trunk/bin/Data/SHP/china.shp</url>
+            <build_spatial_index>true</build_spatial_index>
+        </features>
+        <styles>
+            <style type="text/css">
+                world {
+                   stroke:             #ffff00;
+                   stroke-width:       5px;
+                   altitude-clamping:  terrain-drape;
+                }            
+            </style>
+        </styles>
+    </model>
+	
+	<options>
+	</options>
+</map>

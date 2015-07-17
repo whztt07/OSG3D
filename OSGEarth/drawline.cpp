@@ -66,9 +66,9 @@ void DrawLine::slotPicked(osg::Vec3d pos)
 
 	m_pFeature->getGeometry()->clear();
 	m_pFeatureNode->setStyle(m_lineStyle);
-	for (int i = 0; i < m_vecPoint.size(); ++i)
+	for (auto& n : m_vecPoint)
 	{
-		m_pFeature->getGeometry()->push_back(m_vecPoint[i]);
+		m_pFeature->getGeometry()->push_back(n);
 	}
 
 	m_pFeatureNode->init();

@@ -93,9 +93,9 @@ void Area::drawPolygon(osg::Vec3d pos/* = osg::Vec3d()*/)
 	osgEarth::Symbology::Geometry* pGeometry = m_pFeatureNode->getFeature()->getGeometry();
 	pGeometry->clear();
 	m_pFeatureNode->setStyle(m_polygonStyle);
-	for (int i = 0; i < m_vecPoints.size(); ++i)
+	for (auto& n : m_vecPoints)
 	{
-		pGeometry->push_back(m_vecPoints[i]);
+		pGeometry->push_back(n);
 	}
 	if (pos != osg::Vec3d())
 	{

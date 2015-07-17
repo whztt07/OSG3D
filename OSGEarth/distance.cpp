@@ -64,9 +64,9 @@ void Distance::slotPicked(osg::Vec3d pos)
 	osgEarth::Symbology::Geometry* pGeometry = m_pFeatureNode->getFeature()->getGeometry();
 	pGeometry->clear();
 	m_pFeatureNode->setStyle(m_lineStyle);
-	for (unsigned int i = 0; i < m_vectPoints.size(); ++i)
+	for (auto& n : m_vectPoints)
 	{
-		pGeometry->push_back(m_vectPoints[i]);
+		pGeometry->push_back(n);
 	}
 
 	m_pFeatureNode->init();

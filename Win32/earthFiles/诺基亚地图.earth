@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<map version="2">
+  <image driver="xyz" enabled="true" name="nokia_map-0" profile="global-mercator" url="http://[1234].maps.nlp.nokia.com.cn/maptile/2.1/maptile/5b33fc2110/normal.day/{z}/{x}/{y}/256/png8?lg=CHI&amp;app_id=90oGXsXHT8IRMSt5D79X&amp;token=JY0BReev8ax1gIrHZZoqIg&amp;xnlp=CL_JSMv2.5.3.2&#x0A;&#x09;&#x09;">
+    <cache_policy min_time="0" usage="no_cache" />
+  </image>
+</map>

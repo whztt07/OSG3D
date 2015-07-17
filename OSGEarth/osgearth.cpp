@@ -1,4 +1,5 @@
 #include "OSGEarth.h"
+#include <QtWidgets/QFileDialog>
 
 OSGEarth::OSGEarth(QWidget *parent)
 	: QMainWindow(parent)
@@ -19,7 +20,7 @@ OSGEarth::OSGEarth(QWidget *parent)
 	m_pGraticule = NULL;
 	m_pRadarMap = nullptr;
 
-	m_pViewer = new GraphicsView(this);
+	m_pViewer = new GraphicsView(QStringLiteral("E:/project/Platform_vc/VS/OSG3D/Win32/earthFiles/高德卫星地图.earth"), this);
 	this->setCentralWidget(m_pViewer);
 
 	connect(ui.actionLine, SIGNAL(triggered()), this, SLOT(slotLine()));
@@ -35,6 +36,7 @@ OSGEarth::OSGEarth(QWidget *parent)
 	connect(ui.actionOverlay, SIGNAL(triggered()), this, SLOT(slotOverlay()));
 	connect(ui.actionGride, SIGNAL(triggered()), this, SLOT(slotGride()));
 	connect(ui.actionMap, SIGNAL(triggered()), this, SLOT(slotRadarMap()));
+	connect(ui.actionSwitchMap, SIGNAL(triggered()), this, SLOT(slotSwitchMap()));
 }
 
 OSGEarth::~OSGEarth()
@@ -284,4 +286,16 @@ void OSGEarth::slotRadarMap()
 			m_pRadarMap->disableMap();
 		}
 	}
+}
+
+void OSGEarth::slotSwitchMap()
+{
+	QString strEarthPath = QFileDialog::getOpenFileName(this,
+		QStringLiteral("打开地图"),
+		"../earthFiles",
+		"earth (*.earth)");
+
+	QApplication::setOverrideCursor(Qt::WaitCursor);
+	m_pViewer->setEarthFile(strEarthPath);
+	QApplication::setOverrideCursor(Qt::ArrowCursor);
 }
