@@ -20,7 +20,7 @@ OSGEarth::OSGEarth(QWidget *parent)
 	m_pGraticule = NULL;
 	m_pRadarMap = nullptr;
 
-	m_pViewer = new GraphicsView(QStringLiteral("E:/project/Platform_vc/VS/OSG3D/Win32/earthFiles/高德卫星地图.earth"), this);
+	m_pViewer = new GraphicsView(QStringLiteral("E:/project/Platform_vc/VS/OSG3D/Win32/earthFiles/本地地图.earth"), this);
 	this->setCentralWidget(m_pViewer);
 
 	connect(ui.actionLine, SIGNAL(triggered()), this, SLOT(slotLine()));

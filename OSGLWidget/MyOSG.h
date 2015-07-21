@@ -28,6 +28,7 @@
 
 #include <osgDB/Registry>
 #include <osgDB/ReadFile>
+#include <osgDB/FileUtils>
 
 #include <osgViewer/Viewer>
 #include <osgViewer/CompositeViewer>
@@ -55,8 +56,6 @@
 #include <osgGA/TrackballManipulator>
 
 #include <osgParticle/PrecipitationEffect>
-#include <osgUtil/Tessellator>
-#include <osg/CullFace>
 
 #ifdef _DEBUG
 #pragma comment(lib,"osgd.lib")

@@ -158,6 +158,15 @@
     <ClCompile Include="framehandle.cpp">
       <Filter>Handle</Filter>
     </ClCompile>
+    <ClCompile Include="goto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_goto.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_goto.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="osgearth.qrc">
@@ -219,6 +228,12 @@
     <CustomBuild Include="framehandle.h">
       <Filter>Handle</Filter>
     </CustomBuild>
+    <CustomBuild Include="goto.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="goto.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="calcmath.h">
@@ -234,6 +249,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_osgearth.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_goto.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>

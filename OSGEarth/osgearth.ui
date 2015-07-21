@@ -61,6 +61,7 @@
     <addaction name="actionGride"/>
     <addaction name="actionMap"/>
     <addaction name="actionSwitchMap"/>
+    <addaction name="actionGoTo"/>
    </widget>
    <addaction name="menu"/>
    <addaction name="menu_2"/>
@@ -184,6 +185,14 @@
   <action name="actionSwitchMap">
    <property name="text">
     <string>切换地图</string>
+   </property>
+  </action>
+  <action name="actionGoTo">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>飞往</string>
    </property>
   </action>
  </widget>

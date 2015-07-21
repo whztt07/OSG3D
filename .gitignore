@@ -1,8 +1,10 @@
 Win32/Debug
 Win32/Release
 GeneratedFiles
+
 *.sdf
 *.user
 *.filters
 *.suo
 *.opensdf
+*.vcxproj.user

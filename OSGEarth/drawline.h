@@ -22,6 +22,13 @@ protected:
 	virtual void slotRightHandle();
 
 private:
+	osg::Node* createPrism(const osg::Vec3Array *pVertex, float fHeight, 
+		bool bTexStretched, const osg::Vec4 &vColor);
+	osg::Vec2Array* createTexCoordByVertex(const osg::Vec3Array *pVertexArray, bool bTexStretched);
+
+	osg::Vec3d DrawLine::getWorldCoord(osg::Vec3d pos);
+
+private:
 	osgEarth::Symbology::Style m_lineStyle;
 	osgEarth::Features::Feature* m_pFeature;
 	osgEarth::Annotation::FeatureNode* m_pFeatureNode;

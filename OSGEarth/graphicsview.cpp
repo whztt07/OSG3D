@@ -1,7 +1,7 @@
 #include "graphicsview.h"
 #include <QtWidgets/QGraphicsScene>
 #include <QtGui/QPaintEngine>
-#include <QtOpenGL/QGLWidget>
+#include <QtWidgets/QOpenGLWidget>
 
 GraphicsView::GraphicsView(const QString& strFile, QWidget *parent)
 {
@@ -39,7 +39,7 @@ void GraphicsView::release()
 
 void GraphicsView::init()
 {
-	QGLWidget* glViewPort = new QGLWidget;
+	QOpenGLWidget* glViewPort = new QOpenGLWidget;
 	glViewPort->setMouseTracking(true);
 	glViewPort->setMaximumSize(2000, 2000);
 	this->setViewport(glViewPort);
@@ -119,8 +119,6 @@ void GraphicsView::setEarthFile(const QString& str)
 			m_pGraphicsWindow = dynamic_cast<osgViewer::GraphicsWindow*>(
 				m_pViewer->getCamera()->getGraphicsContext());
 			m_pEarthManipulator->setViewpoint(osgEarth::Util::Viewpoint(105, 33, 0, 0, -90, 9000000));
-// 			m_pEarthManipulator->setViewpoint(osgEarth::Util::Viewpoint(
-// 				104.81443, 26.60379, 1811.2336, 0.0, -90.0, 5000));
 
 			createSky();
 		}

@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OSG3D", "OSG3D\OSG3D.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OSGEarth", "OSGEarth\OSGEarth.vcxproj", "{F08E5A20-D6DC-493A-BE09-C7709C513DEC}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OSGLWidget", "OSGLWidget\OSGLWidget.vcxproj", "{06E815E0-08CB-4EC4-8DC7-2EEBBF8D7F55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -21,6 +23,10 @@ Global
 		{F08E5A20-D6DC-493A-BE09-C7709C513DEC}.Debug|Win32.Build.0 = Debug|Win32
 		{F08E5A20-D6DC-493A-BE09-C7709C513DEC}.Release|Win32.ActiveCfg = Release|Win32
 		{F08E5A20-D6DC-493A-BE09-C7709C513DEC}.Release|Win32.Build.0 = Release|Win32
+		{06E815E0-08CB-4EC4-8DC7-2EEBBF8D7F55}.Debug|Win32.ActiveCfg = Debug|Win32
+		{06E815E0-08CB-4EC4-8DC7-2EEBBF8D7F55}.Debug|Win32.Build.0 = Debug|Win32
+		{06E815E0-08CB-4EC4-8DC7-2EEBBF8D7F55}.Release|Win32.ActiveCfg = Release|Win32
+		{06E815E0-08CB-4EC4-8DC7-2EEBBF8D7F55}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

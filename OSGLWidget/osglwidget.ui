@@ -1,0 +1,25 @@
+<UI version="4.0" >
+ <class>Widget3DClass</class>
+ <widget class="QWidget" name="Widget3DClass" >
+  <property name="objectName" >
+   <string notr="true">Widget3DClass</string>
+  </property>
+  <property name="geometry" >
+   <rect>
+	<x>0</x>
+	<y>0</y>
+	<width>600</width>
+	<height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Widget3D</string>
+  </property>
+ </widget>
+ <layoutDefault spacing="6" margin="11" />
+ <pixmapfunction></pixmapfunction>
+ <resources>
+   <include location="widget3d.qrc"/>
+ </resources>
+ <connections/>
+</UI>
