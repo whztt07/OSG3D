@@ -20,6 +20,7 @@ public:
 	osgEarth::MapNode* getMapNode(){ return m_pMapNode; }
 	const osgEarth::SpatialReference* getSRS(){ return m_pMapSRS; }
 	osgEarth::Util::EarthManipulator* getManipulator(){ return m_pEarthManipulator; }
+	osgEarth::Util::SkyNode* getSky(){ return m_pSkyNode; }
 	void setEarthFile(const QString& str);
 	void release();
 

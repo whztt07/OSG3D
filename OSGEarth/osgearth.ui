@@ -62,6 +62,11 @@
     <addaction name="actionMap"/>
     <addaction name="actionSwitchMap"/>
     <addaction name="actionGoTo"/>
+    <addaction name="separator"/>
+    <addaction name="actionSun"/>
+    <addaction name="actionMoon"/>
+    <addaction name="separator"/>
+    <addaction name="actionWeather"/>
    </widget>
    <addaction name="menu"/>
    <addaction name="menu_2"/>
@@ -189,10 +194,56 @@
   </action>
   <action name="actionGoTo">
    <property name="checkable">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="text">
     <string>飞往</string>
+   </property>
+  </action>
+  <action name="actionSun">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>太阳</string>
+   </property>
+  </action>
+  <action name="actionMoon">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>月亮</string>
+   </property>
+  </action>
+  <action name="actionWeather">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>天气</string>
+   </property>
+  </action>
+  <action name="actionSnow">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>雪</string>
+   </property>
+  </action>
+  <action name="actionFog">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>雾</string>
    </property>
   </action>
  </widget>

@@ -16,6 +16,8 @@
 #include "areaanalysis.h"
 #include "avatar.h"
 #include "radarmap.h"
+#include "goto.h"
+#include "weather.h"
 
 class OSGEarth : public QMainWindow
 {
@@ -40,6 +42,12 @@ private slots:
 	void slotGride();
 	void slotRadarMap();
 	void slotSwitchMap();
+	void slotGoto();
+
+	void slotSun();
+	void slotMoon();
+
+	void slotWeather();
 
 private:
 	Ui::OSGEarthClass ui;
@@ -57,6 +65,8 @@ private:
 	osg::ref_ptr<osgEarth::Annotation::ImageOverlay> m_pImage;
 	osg::ref_ptr<osgEarth::Util::GeodeticGraticule> m_pGraticule;
 	RadarMap* m_pRadarMap;
+	GoTo* m_pGoto;
+	Weather* m_pWeather;
 };
 
 #endif // OSGEARTH_H

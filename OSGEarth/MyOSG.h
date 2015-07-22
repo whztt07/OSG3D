@@ -69,6 +69,7 @@
 #pragma comment(lib,"osgFXd.lib")
 #pragma comment(lib,"osgShadowd.lib")
 #pragma comment(lib,"OpenThreadsd.lib")
+#pragma comment(lib, "osgParticled.lib")
 #else
 #pragma comment(lib,"osg.lib")
 #pragma comment(lib,"osgDB.lib")
@@ -80,6 +81,7 @@
 #pragma comment(lib,"osgFX.lib")
 #pragma comment(lib,"osgShadow.lib")
 #pragma comment(lib,"OpenThreads.lib")
+#pragma comment(lib, "osgParticle.lib")
 #endif //_debug
 
 #endif

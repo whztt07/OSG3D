@@ -6,19 +6,21 @@ OSGEarth::OSGEarth(QWidget *parent)
 {
 	ui.setupUi(this);
 
-	m_pDrawLine = NULL;
-	m_pPolygon = NULL;
-	m_pCircle = NULL;
-	m_pDistance = NULL;
-	m_pArea = NULL;
-	m_pHeight = NULL;
-	m_pWater = NULL;
-	m_pLineAns = NULL;
-	m_pAreaAns = NULL;
-	m_pAvatarNode = NULL;
-	m_pImage = NULL;
-	m_pGraticule = NULL;
+	m_pDrawLine = nullptr;
+	m_pPolygon = nullptr;
+	m_pCircle = nullptr;
+	m_pDistance = nullptr;
+	m_pArea = nullptr;
+	m_pHeight = nullptr;
+	m_pWater = nullptr;
+	m_pLineAns = nullptr;
+	m_pAreaAns = nullptr;
+	m_pAvatarNode = nullptr;
+	m_pImage = nullptr;
+	m_pGraticule = nullptr;
 	m_pRadarMap = nullptr;
+	m_pGoto = nullptr;
+	m_pWeather = nullptr;
 
 	m_pViewer = new GraphicsView(QStringLiteral("E:/project/Platform_vc/VS/OSG3D/Win32/earthFiles/±¾µØµØÍ¼.earth"), this);
 	this->setCentralWidget(m_pViewer);
@@ -37,6 +39,10 @@ OSGEarth::OSGEarth(QWidget *parent)
 	connect(ui.actionGride, SIGNAL(triggered()), this, SLOT(slotGride()));
 	connect(ui.actionMap, SIGNAL(triggered()), this, SLOT(slotRadarMap()));
 	connect(ui.actionSwitchMap, SIGNAL(triggered()), this, SLOT(slotSwitchMap()));
+	connect(ui.actionGoTo, SIGNAL(triggered()), this, SLOT(slotGoto()));
+	connect(ui.actionSun, SIGNAL(triggered()), this, SLOT(slotSun()));
+	connect(ui.actionMoon, SIGNAL(triggered()), this, SLOT(slotMoon()));
+	connect(ui.actionWeather, SIGNAL(triggered()), this, SLOT(slotWeather()));
 }
 
 OSGEarth::~OSGEarth()
@@ -298,4 +304,69 @@ void OSGEarth::slotSwitchMap()
 	QApplication::setOverrideCursor(Qt::WaitCursor);
 	m_pViewer->setEarthFile(strEarthPath);
 	QApplication::setOverrideCursor(Qt::ArrowCursor);
+}
+
+void OSGEarth::slotGoto()
+{
+	if (ui.actionGoTo->isChecked())
+	{
+		if (m_pGoto == nullptr)
+		{
+			m_pGoto = new GoTo(m_pViewer);
+		}
+		m_pGoto->show();
+	}
+	else
+	{
+		delete m_pGoto;
+		m_pGoto = nullptr;
+	}
+}
+
+void OSGEarth::slotSun()
+{
+	if (ui.actionSun->isChecked())
+	{
+		if (m_pViewer)
+		{
+			m_pViewer->getSky()->setSunVisible(true);
+		}
+	}
+	else
+	{
+		if (m_pViewer)
+		{
+			m_pViewer->getSky()->setSunVisible(false);
+		}
+	}
+}
+
+void OSGEarth::slotMoon()
+{
+	if (ui.actionMoon->isChecked())
+	{
+		if (m_pViewer)
+		{
+			m_pViewer->getSky()->setMoonVisible(true);
+		}
+	}
+	else
+	{
+		if (m_pViewer)
+		{
+			m_pViewer->getSky()->setMoonVisible(false);
+		}
+	}
+}
+
+void OSGEarth::slotWeather()
+{
+	if (m_pWeather != nullptr)
+	{
+		delete m_pWeather;
+		m_pWeather = nullptr;
+	}
+
+	m_pWeather = new Weather(m_pViewer);
+	m_pWeather->show();
 }

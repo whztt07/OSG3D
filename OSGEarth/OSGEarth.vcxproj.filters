@@ -48,6 +48,9 @@
     <Filter Include="Handle">
       <UniqueIdentifier>{cecde5a3-ea09-447c-b5c7-83a24b08d884}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Particles">
+      <UniqueIdentifier>{45ae3349-1570-42ea-9d8c-8acc73b5739d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -167,6 +170,24 @@
     <ClCompile Include="GeneratedFiles\Release\moc_goto.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="rain.cpp">
+      <Filter>Particles</Filter>
+    </ClCompile>
+    <ClCompile Include="snow.cpp">
+      <Filter>Particles</Filter>
+    </ClCompile>
+    <ClCompile Include="fog.cpp">
+      <Filter>Particles</Filter>
+    </ClCompile>
+    <ClCompile Include="weather.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_weather.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_weather.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="osgearth.qrc">
@@ -234,6 +255,12 @@
     <CustomBuild Include="goto.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="weather.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="weather.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="calcmath.h">
@@ -252,6 +279,18 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_goto.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rain.h">
+      <Filter>Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="snow.h">
+      <Filter>Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="fog.h">
+      <Filter>Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_weather.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>

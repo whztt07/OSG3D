@@ -44,7 +44,7 @@ void GraphicsView::init()
 	glViewPort->setMaximumSize(2000, 2000);
 	this->setViewport(glViewPort);
 	this->setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
-	startTimer(10);
+	startTimer(0);
 	m_pRoot = new osg::Group;
 	m_pRoot->setName("root");
 
