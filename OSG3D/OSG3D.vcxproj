@@ -40,12 +40,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\temp\$(ProjectName)\</IntDir>
+    <IncludePath>$(OSGEARTH_PATH)\include;$(OSG_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <LibraryPath>$(OSGEARTH_PATH)\lib;$(OSG_PATH)\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <ExecutablePath>$(OSGEARTH_PATH)\bin;$(OSG_PATH)\bin;$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
-    <IncludePath>$(OSGEARTH_PATH)\include;$(OSG_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
-    <LibraryPath>$(OSGEARTH_PATH)\lib;$(OSG_PATH)\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH)</ExecutablePath>
+    <IncludePath>$(OSG_DIR)\include;$(OSGEARTH_DIR)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <LibraryPath>$(OSG_DIR)\lib;$(OSGEARTH_DIR)\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
     <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\temp\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -94,7 +96,10 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CSManipulator.cpp" />
+    <ClCompile Include="custommanipulator.cpp" />
     <ClCompile Include="EventAdapter.cpp" />
+    <ClCompile Include="fountain.cpp" />
     <ClCompile Include="GeneratedFiles\Debug\moc_graphicsview.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -120,7 +125,10 @@
     <ClCompile Include="osg3d.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CSManipulator.h" />
+    <ClInclude Include="custommanipulator.h" />
     <ClInclude Include="EventAdapter.h" />
+    <ClInclude Include="fountain.h" />
     <ClInclude Include="GeneratedFiles\ui_motion.h" />
     <ClInclude Include="GeneratedFiles\ui_osg3d.h" />
     <CustomBuild Include="graphicsview.h">

@@ -5,6 +5,7 @@
 #include "ui_osg3d.h"
 #include "graphicsview.h"
 #include "motion.h"
+#include "CSManipulator.h"
 
 class OSG3D : public QMainWindow
 {
@@ -19,11 +20,13 @@ private slots:
 
 private:
 	void init();
+	void addAvater();
 
 private:
 	Ui::OSG3DClass ui;
 	GraphicsView* m_pOSGView;
 	Motion* m_pMotion;
+	CSManipulator* m_pManipulator;
 };
 
 #endif // OSG3D_H

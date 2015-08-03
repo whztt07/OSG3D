@@ -24,6 +24,8 @@
 #include <osg/Array>
 #include <osg/CoordinateSystemNode>
 #include <osg/AnimationPath>
+#include <osg/LineSegment>
+#include <osg/ComputeBoundsVisitor>
 
 #include <osgDB/Registry>
 #include <osgDB/ReadFile>
@@ -41,6 +43,7 @@
 #include <osgShadow/ViewDependentShadowMap>
 
 #include <osgUtil/Optimizer>
+#include <osgUtil/IntersectVisitor>
 
 #include <osgGA/CameraManipulator>
 #include <osgGA/StateSetManipulator>
@@ -54,6 +57,13 @@
 #include <osgGA/TrackballManipulator>
 
 #include <osgParticle/PrecipitationEffect>
+#include <osgParticle/ParticleSystem>
+#include <osgParticle/ParticleSystemUpdater>
+#include <osgParticle/ModularEmitter>
+#include <osgParticle/RandomRateCounter>
+#include <osgParticle/ModularProgram>
+#include <osgParticle/AccelOperator>
+#include <osgParticle/FluidFrictionOperator>
 
 #include <osgAnimation/EaseMotion>
 
@@ -69,6 +79,7 @@
 #pragma comment(lib,"osgShadowd.lib")
 #pragma comment(lib,"OpenThreadsd.lib")
 #pragma comment(lib, "osgAnimationd.lib")
+#pragma comment(lib, "osgParticled.lib")
 #else
 #pragma comment(lib,"osg.lib")
 #pragma comment(lib,"osgDB.lib")
@@ -81,6 +92,7 @@
 #pragma comment(lib,"osgShadow.lib")
 #pragma comment(lib,"OpenThreads.lib")
 #pragma comment(lib, "osgAnimation.lib")
+#pragma comment(lib, "osgParticle.lib")
 #endif //_debug
 
 #endif

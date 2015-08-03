@@ -94,6 +94,15 @@
     <ClCompile Include="motion.cpp">
       <Filter>Motion</Filter>
     </ClCompile>
+    <ClCompile Include="fountain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="custommanipulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSManipulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyOSG.h">
@@ -110,6 +119,15 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_motion.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fountain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="custommanipulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSManipulator.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

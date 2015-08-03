@@ -1,10 +1,10 @@
 Win32/Debug
 Win32/Release
-GeneratedFiles
+*/GeneratedFiles/Debug/*
+*/GeneratedFiles/Release/*
 
 *.sdf
 *.user
-*.filters
 *.suo
 *.opensdf
 *.vcxproj.user
