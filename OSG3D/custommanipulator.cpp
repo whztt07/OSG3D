@@ -7,8 +7,8 @@ m_dSpeedDelta(0.1),
 m_dSpeed(0.3),
 m_bIsLeftPressed(false)
 {
-	m_vecPosition = osg::Vec3d(0, 0, 5);
-	m_vecRotation = osg::Vec3d(osg::PI_2, 0, 0);
+	m_vecPosition = osg::Vec3d(9, 8, 5);
+	m_vecRotation = osg::Vec3d(osg::PI_2, 0, osg::PI);
 }
 
 CustomManipulator::~CustomManipulator()

@@ -1,7 +1,8 @@
 Win32/Debug
 Win32/Release
-*/GeneratedFiles/Debug/*
-*/GeneratedFiles/Release/*
+OSG3D/GeneratedFiles
+OSGEarth/GeneratedFiles
+OSGLWidget/GeneratedFiles
 
 *.sdf
 *.user
